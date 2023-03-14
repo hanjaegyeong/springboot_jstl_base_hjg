@@ -24,6 +24,13 @@
                                 </p>
                             </div>
                             <div class="mb-3">
+                                <label for="title" class="form-label">닉네임</label>
+                                <form:textarea path="nickname" rows="1" class="form-control" />
+                                <p class="error px-2">
+                                    <form:errors path="nickname" />
+                                </p>
+                            </div>
+                            <div class="mb-3">
                                 <label for="title" class="form-label">내용</label>
                                 <form:textarea path="content" rows="10" class="form-control" />
                                 <p class="error px-2">

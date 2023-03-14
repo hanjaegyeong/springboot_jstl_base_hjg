@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board">
     <insert id="insert" parameterType="Post">
-        insert into board ( title, content )
-        values ( #{title}, #{content} )
+        insert into board ( title, content, nickname )
+        values ( #{title}, #{content}, #{nickname} )
     </insert>
     <update id="update" parameterType="Post">
-        update board set title = #{title}, content = #{content} where id = #{id}
+        update board set title = #{title}, content = #{content}, nickname = #{nickname} where id = #{id}
     </update>
     <delete id="delete" parameterType="long">
         delete from board where id = #{id}
@@ -20,6 +20,7 @@
         select
             id,
             title,
+            nickname,
             content,
             created_at
         from board
