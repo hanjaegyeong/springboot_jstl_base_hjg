@@ -17,9 +17,9 @@
                     <thead>
                     <tr>
                         <th scope="col" width="15%">#</th>
-                        <th scope="col" width="40%">제목</th>
+                        <th scope="col" width="30%">게스트하우스명</th>
                         <th scope="col" width="20%">닉네임</th>
-                        <th scope="col" width="20%">주소</th>
+                        <th scope="col" width="40%">주소</th>
                         <th scope="col" width="25%">작성일자</th>
                     </tr>
                     </thead>

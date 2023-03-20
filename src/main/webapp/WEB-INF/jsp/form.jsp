@@ -17,7 +17,7 @@
                         <form:form method="post" action="/save" modelAttribute="post" >
                             <form:hidden path="id"/>
                             <div class="mb-3">
-                                <label for="title" class="form-label">제목</label>
+                                <label for="title" class="form-label">게스트하우스명</label>
                                 <form:input path="title" class="form-control"/>
                                 <p class="error px-2">
                                     

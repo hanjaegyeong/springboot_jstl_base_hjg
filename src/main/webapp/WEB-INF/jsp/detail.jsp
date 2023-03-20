@@ -15,7 +15,10 @@
                     <c:choose>
                         <c:when test="${post != null}">
                             <h5 class="card-title">${post.title}</h5>
+                            <p class="card-text mt-3">${post.nickname}</p>
                             <h6 class="card-subtitle mb-2 text-muted"><fmt:formatDate value="${post.createdAt}" pattern="yyyy-MM-dd HH:mm:ss"/></h6>
+                            <p class="card-subtitle mb-2 text-muted">주소: ${post.address}</p>
+                            <p class="card-subtitle mb-2 text-muted">${post.area}평</p>
                             <p class="card-text mt-3">${post.content}</p>
                             <a href="/form/${post.id}" class="card-link">수정</a>
                             <a href="/delete/${post.id}" class="card-link">삭제</a>
