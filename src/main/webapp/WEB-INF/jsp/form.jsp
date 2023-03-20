@@ -20,6 +20,7 @@
                                 <label for="title" class="form-label">제목</label>
                                 <form:input path="title" class="form-control"/>
                                 <p class="error px-2">
+                                    
                                     <form:errors path="title" />
                                 </p>
                             </div>
@@ -31,14 +32,28 @@
                                 </p>
                             </div>
                             <div class="mb-3">
+                                <label for="title" class="form-label">주소</label>
+                                <form:textarea path="address" rows="1" class="form-control" />
+                                <p class="error px-2">
+                                    <form:errors path="address" />
+                                </p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="title" class="form-label">실평수</label>
+                                <form:textarea path="area" rows="1" class="form-control" />
+                                <p class="error px-2">
+                                    <form:errors path="area" />
+                                </p>
+                            </div>
+                            <div class="mb-3">
                                 <label for="title" class="form-label">내용</label>
                                 <form:textarea path="content" rows="10" class="form-control" />
                                 <p class="error px-2">
                                     <form:errors path="content" />
                                 </p>
                             </div>
-                            <a href="/" class="btn btn-secondary me-2">취소</a>
-                            <button type="submit" class="btn btn-primary">저장</button>
+                            <a href="/" class="btn btn-secondary me-2">취소하기</a>
+                            <button type="submit" class="btn btn-primary">저장하기</button>
                         </form:form>
                     </div>
                 </div>

@@ -19,6 +19,7 @@
                         <th scope="col" width="15%">#</th>
                         <th scope="col" width="40%">제목</th>
                         <th scope="col" width="20%">닉네임</th>
+                        <th scope="col" width="20%">주소</th>
                         <th scope="col" width="25%">작성일자</th>
                     </tr>
                     </thead>
@@ -28,6 +29,7 @@
                             <th scope="row">${post.id}</th>
                             <td><a href="/read/${post.id}">${post.title}</a></td>
                             <td><a href="/read/${post.id}">${post.nickname}</a></td>
+                            <td><a href="/read/${post.id}">${post.address}</a></td>
                             <td><fmt:formatDate value="${post.createdAt}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                         </tr>
                     </c:forEach>

@@ -11,18 +11,30 @@ public class Post {
 
     @NotEmpty(message = "내용을 입력하여 주세요.")
     private String content;
-
-    private Date createdAt;
-
+    
     private String nickname;
 
-    public String getNickname() {
-        return nickname;
+    private String address;
+
+    private String area;
+
+    public String getArea() {
+        return area;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setArea(String area) {
+        this.area = area;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    private Date createdAt;
 
     public Long getId() {
         return id;
@@ -30,6 +42,14 @@ public class Post {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getTitle() {
