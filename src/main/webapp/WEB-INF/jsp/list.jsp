@@ -26,10 +26,10 @@
                     <tbody>
                     <c:forEach items="${page.posts}" var="post">
                         <tr>
-                            <th scope="row">${post.id}</th>
-                            <td><a href="/read/${post.id}">${post.title}</a></td>
-                            <td><a href="/read/${post.id}">${post.nickname}</a></td>
-                            <td><a href="/read/${post.id}">${post.address}</a></td>
+                            <th scope="row">${post.boardId}</th>
+                            <td><a href="/read/${post.boardId}">${post.title}</a></td>
+                            <td>${post.nickname}</a></td>
+                            <td>${post.address}</a></td>
                             <td><fmt:formatDate value="${post.createdAt}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                         </tr>
                     </c:forEach>

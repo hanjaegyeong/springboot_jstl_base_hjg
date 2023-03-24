@@ -8,17 +8,17 @@
         values ( #{title}, #{content}, #{nickname}, #{address}, #{area} )
     </insert>
     <update id="update" parameterType="Post">
-        update board set title = #{title}, content = #{content}, nickname = #{nickname}, address = #{address}, area = #{area} where id = #{id}
+        update board set title = #{title}, content = #{content}, nickname = #{nickname}, address = #{address}, area = #{area} where board_id = #{boardId}
     </update>
     <delete id="delete" parameterType="long">
-        delete from board where id = #{id}
+        delete from board where board_id = #{boardId}
     </delete>
     <select id="totalCount" resultType="int">
-        select count(id) from board
+        select count(board_id) from board
     </select>
     <select id="posts" parameterType="map" resultType="Post">
         select
-            id,
+            board_id,
             title,
             nickname,
             address,
@@ -29,6 +29,6 @@
         order by created_at desc limit #{offset}, #{pageSize}
     </select>
     <select id="post" parameterType="long" resultType="Post">
-        select * from board where id = #{id}
+        select * from board where board_id = #{boardId}
     </select>
 </mapper>

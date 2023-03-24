@@ -3,7 +3,10 @@ package com.example.board.controller;
 import com.example.board.controller.dto.PageRequest;
 import com.example.board.controller.dto.PostPage;
 import com.example.board.model.Post;
+import com.example.board.model.Reserve;
 import com.example.board.service.BoardService;
+import com.example.board.service.Reserveservice;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +14,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -21,6 +26,9 @@ import javax.validation.Valid;
 public class BoardController {
     @Autowired
     BoardService boardService;
+
+    @Autowired
+    Reserveservice reserveservice;
 
     @GetMapping("")
     public String list(PageRequest pageRequest, Model model) {
@@ -38,7 +46,9 @@ public class BoardController {
     @GetMapping("/read/{id:\\d+}")
     public String read(@PathVariable long id, Model model) {
         Post post = boardService.findById(id);
+        //List<Reserve> reserve = reserveservice.findAll(id);
         model.addAttribute("post", post);
+        //model.addAttribute("reserve", reserve);
         return "detail";
     }
 

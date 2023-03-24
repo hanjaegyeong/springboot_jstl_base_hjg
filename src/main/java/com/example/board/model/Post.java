@@ -4,7 +4,7 @@ import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 public class Post {
-    private Long id;
+    private Long boardId;
 
     @NotEmpty(message = "제목을 입력하여 주세요.")
     private String title;
@@ -17,6 +17,14 @@ public class Post {
     private String address;
 
     private String area;
+
+    public Long getBoardId() {
+        return this.boardId;
+    }
+
+    public void setBoardId(Long boardId) {
+        this.boardId = boardId;
+    }
 
     public String getArea() {
         return area;
@@ -35,14 +43,6 @@ public class Post {
     }
 
     private Date createdAt;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNickname() {
         return nickname;

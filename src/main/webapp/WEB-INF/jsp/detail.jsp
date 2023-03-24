@@ -20,8 +20,8 @@
                             <p class="card-subtitle mb-2 text-muted">주소: ${post.address}</p>
                             <p class="card-subtitle mb-2 text-muted">${post.area}평</p>
                             <p class="card-text mt-3">${post.content}</p>
-                            <a href="/form/${post.id}" class="card-link">수정</a>
-                            <a href="/delete/${post.id}" class="card-link">삭제</a>
+                            <a href="/form/${post.boardId}" class="card-link">수정</a>
+                            <a href="/delete/${post.boardId}" class="card-link">삭제</a>
                             <a href="/" class="card-link">목록</a>
                         </c:when>
                         <c:otherwise>

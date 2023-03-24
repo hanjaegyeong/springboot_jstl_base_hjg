@@ -15,12 +15,11 @@
                 <div class="card">
                     <div class="card-body">
                         <form:form method="post" action="/save" modelAttribute="post" >
-                            <form:hidden path="id"/>
+                            <form:hidden path="board_id"/>
                             <div class="mb-3">
                                 <label for="title" class="form-label">게스트하우스명</label>
                                 <form:input path="title" class="form-control"/>
                                 <p class="error px-2">
-                                    
                                     <form:errors path="title" />
                                 </p>
                             </div>

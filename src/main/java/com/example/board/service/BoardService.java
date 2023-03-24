@@ -18,7 +18,7 @@ public class BoardService {
     SqlSession sqlSession;
 
     public void save(Post post) {
-        if (post.getId() == null) {
+        if (post.getBoardId() == null) {
             sqlSession.insert("board.insert", post);
         } else {
             sqlSession.update("board.update", post);
