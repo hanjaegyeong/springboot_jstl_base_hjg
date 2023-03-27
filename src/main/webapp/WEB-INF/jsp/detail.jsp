@@ -33,5 +33,32 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card">
+                    <!-- 댓글입력 -->
+                    <div class="comment-input-container">
+                        예약 등록
+                        <form method="post" action="/comment/${post.boardId}" modelAttribute="postCommentReq">
+                            <input id="comment-input-box" class="comment-input-items" name="content" type="text"/>
+                            <button class="comment-input-items" type="submit">등록</button>
+                        </form>
+                        <!-- <iframe name='blankifr' style='display:none;'></iframe>  -->
+                        <!-- submit했을 때 페이지 이동 안시키기 위함-->
+                    </div>
+                
+                    <!-- 댓글들 -->
+                    <div class="comments">
+                        <c:forEach items="${comments}" var="comment">
+                            <p>${comment.content}</p>
+                        </c:forEach>
+                    </div>
+                    </form:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,10 +1,13 @@
 package com.example.board.controller;
 
 import com.example.board.controller.dto.PageRequest;
+import com.example.board.controller.dto.PostCommentReq;
 import com.example.board.controller.dto.PostPage;
+import com.example.board.model.Comment;
 import com.example.board.model.Post;
 import com.example.board.model.Reserve;
 import com.example.board.service.BoardService;
+import com.example.board.service.CommentService;
 import com.example.board.service.Reserveservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +33,9 @@ public class BoardController {
     @Autowired
     Reserveservice reserveservice;
 
+    @Autowired
+    CommentService commentService;
+
     @GetMapping("")
     public String list(PageRequest pageRequest, Model model) {
         PostPage page = boardService.getPage(pageRequest);
@@ -46,9 +52,14 @@ public class BoardController {
     @GetMapping("/read/{id:\\d+}")
     public String read(@PathVariable long id, Model model) {
         Post post = boardService.findById(id);
-        //List<Reserve> reserve = reserveservice.findAll(id);
+        List<Comment> comments = commentService.findAll(id); //해당 게시글의 댓글 가져오기
+
         model.addAttribute("post", post);
-        //model.addAttribute("reserve", reserve);
+        model.addAttribute("comments", comments); //댓글들
+
+        PostCommentReq postCommentReq = new PostCommentReq(); //댓글 작성할 때 쓸 객체
+        model.addAttribute("postCommentReq", postCommentReq);
+        
         return "detail";
     }
 

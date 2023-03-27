@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comment">
+    <insert id="insert" parameterType="Comment">
+        insert into comment ( board_id, content )
+        values ( #{boardId}, #{content} )
+    </insert>
+    <select id="comments" parameterType="Long" resultType="Comment">
+        select * 
+        from comment 
+        where board_id = #{boardId}
+    </select>
+</mapper>

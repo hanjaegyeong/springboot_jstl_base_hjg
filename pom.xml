@@ -41,6 +41,13 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<version>9.0.44</version>
 		</dependency>
+
+		<!-- lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
