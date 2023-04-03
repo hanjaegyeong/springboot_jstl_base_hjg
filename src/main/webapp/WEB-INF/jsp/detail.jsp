@@ -19,6 +19,8 @@
                             <h6 class="card-subtitle mb-2 text-muted"><fmt:formatDate value="${post.createdAt}" pattern="yyyy-MM-dd HH:mm:ss"/></h6>
                             <p class="card-subtitle mb-2 text-muted">주소: ${post.address}</p>
                             <p class="card-subtitle mb-2 text-muted">${post.area}평</p>
+                            <!--이미지 출력-->
+                            <IMG src='${pageContext.request.contextPath}/resources/upload/file/${post.boardId}/img.jpg'><br>
                             <p class="card-text mt-3">${post.content}</p>
                             <a href="/form/${post.boardId}" class="card-link">수정</a>
                             <a href="/delete/${post.boardId}" class="card-link">삭제</a>
@@ -34,12 +36,12 @@
         </div>
     </div>
     <br>
-    <!--파일 업로드-->
+    <!--이미지 파일 업로드-->
     <div class="container">
         <div class="row mt-2">
             <div class="col-12">
                 <div class="card">
-                <form action="${pageContext.request.contextPath }/file/upload.do" method="post" enctype="multipart/form-data">
+                <form action="${pageContext.request.contextPath}/file/${post.boardId}/upload.do" method="post" enctype="multipart/form-data">
                     <label><input type="file" name="upload" /></label>
                     <input type="submit" value="업로드" />
                 </form>
@@ -76,5 +78,28 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+
+        function readURL(input) {
+           var file = input.files[0] 
+           console.log(file)
+           if (file != '') {
+              var reader = new FileReader();
+              reader.readAsDataURL(file);
+              reader.onload = function (e) { 
+              console.log(e.target)
+             console.log(e.target.result)
+                $('#preview').attr('src', e.target.result);
+               }
+           }
+       }  
+     </script>
+     <form method="post" action="${contextPath}/board/writeSave" enctype="multipart/form-data">
+        <div class="form-group" style="height: 150px; width: 200px;">
+                <label>이미지 파일 첨부</label> 
+                <input type="file" name="imgFile" onchange="readURL(this);"/>
+                <img id="preview" src="#" width=200 height=150 alt="선택된 이미지가 없습니다" style="align-content: flex-end; ">
+        </div>
+    </form>
 </body>
 </html>
