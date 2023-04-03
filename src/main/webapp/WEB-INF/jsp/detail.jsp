@@ -78,28 +78,5 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-
-        function readURL(input) {
-           var file = input.files[0] 
-           console.log(file)
-           if (file != '') {
-              var reader = new FileReader();
-              reader.readAsDataURL(file);
-              reader.onload = function (e) { 
-              console.log(e.target)
-             console.log(e.target.result)
-                $('#preview').attr('src', e.target.result);
-               }
-           }
-       }  
-     </script>
-     <form method="post" action="${contextPath}/board/writeSave" enctype="multipart/form-data">
-        <div class="form-group" style="height: 150px; width: 200px;">
-                <label>이미지 파일 첨부</label> 
-                <input type="file" name="imgFile" onchange="readURL(this);"/>
-                <img id="preview" src="#" width=200 height=150 alt="선택된 이미지가 없습니다" style="align-content: flex-end; ">
-        </div>
-    </form>
 </body>
 </html>
