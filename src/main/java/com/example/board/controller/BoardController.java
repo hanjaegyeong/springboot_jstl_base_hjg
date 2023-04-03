@@ -5,7 +5,6 @@ import com.example.board.controller.dto.PostCommentReq;
 import com.example.board.controller.dto.PostPage;
 import com.example.board.model.Comment;
 import com.example.board.model.Post;
-import com.example.board.model.Reserve;
 import com.example.board.service.BoardService;
 import com.example.board.service.CommentService;
 import com.example.board.service.Reserveservice;

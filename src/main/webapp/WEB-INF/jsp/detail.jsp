@@ -33,6 +33,22 @@
             </div>
         </div>
     </div>
+    <br>
+    <!--파일 업로드-->
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card">
+                <form action="${pageContext.request.contextPath }/file/upload.do" method="post" enctype="multipart/form-data">
+                    <label><input type="file" name="upload" /></label>
+                    <input type="submit" value="업로드" />
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--댓글-->
     <div class="container">
         <div class="row mt-2">
             <div class="col-12">
