@@ -41,11 +41,11 @@ public class BoardController {
         model.addAttribute("page", page);
         return "list"; // WEB-INF/list.jsp 템플릿 호출
     }
-    @GetMapping("/test2")
+    @GetMapping("/cardview")
     public String list2(PageRequest pageRequest, Model model) {
         PostPage page = boardService.getPage(pageRequest);
         model.addAttribute("page", page);
-        return "list2"; // WEB-INF/list.jsp 템플릿 호출
+        return "cardview";
     }
 
     @GetMapping("/read/{id:\\d+}")
