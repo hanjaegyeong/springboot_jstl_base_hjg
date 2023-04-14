@@ -42,9 +42,11 @@
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
-                        <!--글 작성 배너-->
-                        <a href="/form" class="btn btn-primary">글 작성</a>
                     </div>
+                    <!--글 작성 배너-->
+                    <a href="/form" class="btn btn-primary">글 작성</a>
+                    <!--로그인 배너-->
+                    <a href="/login.do" class="btn btn-primary">로그인</a>
                 </div>
             </div>
         </nav>

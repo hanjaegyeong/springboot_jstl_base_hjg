@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-@ResponseBody
 @Controller
 public class FileController {
     @RequestMapping("/file/{boardId}/upload.do")
@@ -34,13 +33,6 @@ public class FileController {
                 String orifileName = f.getOriginalFilename();
                 String ext = orifileName.substring(orifileName.lastIndexOf("."));
 
-                // // 이름 값 변경을 위한 설정
-                // SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmssSSS");
-                // int rand = (int)(Math.random()*1000);
-
-                // // 파일 이름 변경
-                // String reName = sdf.format(System.currentTimeMillis()) + "_" + rand + ext;
-
                 // 파일 저장
                 // boardId 포함된 루트로 각각 저장
                 try {
@@ -50,6 +42,6 @@ public class FileController {
                 }
             }
         }
-    return "upload";
+    return "redirect:/";
     }
 }

@@ -35,14 +35,14 @@ public class BoardController {
     @Autowired
     CommentService commentService;
 
-    @GetMapping("")
+    @GetMapping("/list")
     public String list(PageRequest pageRequest, Model model) {
         PostPage page = boardService.getPage(pageRequest);
         model.addAttribute("page", page);
         return "list"; // WEB-INF/list.jsp 템플릿 호출
     }
-    @GetMapping("/cardview")
-    public String list2(PageRequest pageRequest, Model model) {
+    @GetMapping("")
+    public String cardview(PageRequest pageRequest, Model model) {
         PostPage page = boardService.getPage(pageRequest);
         model.addAttribute("page", page);
         return "cardview";
@@ -93,6 +93,6 @@ public class BoardController {
             return "form";
         }
         boardService.save(post);
-        return "redirect:/";
+        return "image-form";
     }
 }
